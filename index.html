@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nicolas & Bérénice — Invitation de mariage</title>
+<meta name="description" content="Nicolas & Bérénice vous invitent à leur mariage le jeudi 05 novembre 2026.">
+<meta name="theme-color" content="#1b3a9c">
+<meta property="og:title" content="Nicolas & Bérénice — Invitation de mariage">
+<meta property="og:image" content="images/photo-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1b3a9c;--blue-d:#122674;--terra:#b9532f;--terra-d:#8f3b1d;--white:#fdfbf7;--ink:#1d2340;--soft:#eef1fa}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Jost',sans-serif;font-weight:300;color:var(--ink);background:var(--white);line-height:1.75;font-size:1.05rem;overflow-x:hidden}
+body.locked{overflow:hidden;height:100svh}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+
+/* ---------- OUVERTURE ---------- */
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 40%,#2a4bb5,var(--blue-d));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3.2rem;padding:1.5rem;transition:opacity 1.4s ease,visibility 1.4s}
+#intro.done{opacity:0;visibility:hidden}
+.env{position:relative;width:min(84vw,340px);aspect-ratio:4/3;perspective:1200px;margin-top:18vh}
+.env>*{position:absolute}
+.env-back{inset:0;background:var(--terra-d);border-radius:3px}
+.card{left:7%;right:7%;top:6%;bottom:6%;background:var(--white);z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 2px 14px rgba(0,0,0,.18);transition:transform 1.5s cubic-bezier(.4,0,.2,1);outline:1px solid rgba(185,83,47,.35);outline-offset:-8px}
+.card small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;color:var(--terra)}
+.card b{font-family:'Pinyon Script',cursive;font-weight:400;font-size:2rem;color:var(--blue);line-height:1.2;margin-top:.3rem}
+.env-front{inset:0;z-index:3;background:linear-gradient(160deg,#c9623b,var(--terra));clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border-radius:3px}
+.flap{left:0;top:0;width:100%;height:58%;z-index:4;background:linear-gradient(#a8472a,var(--terra));clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1.1s cubic-bezier(.5,0,.2,1),z-index 0s .45s}
+.seal{left:50%;top:58%;width:58px;height:58px;margin:-29px 0 0 -29px;z-index:5;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3d5fd0,var(--blue) 55%,var(--blue-d));box-shadow:0 3px 8px rgba(0,0,0,.4),inset 0 0 0 3px rgba(255,255,255,.18);display:grid;place-items:center;font-family:'Cinzel',serif;color:#f1e4c8;font-size:.82rem;letter-spacing:.04em;transition:opacity .5s,transform .7s}
+.opening .flap{transform:rotateX(180deg);z-index:1}
+.opening .seal{opacity:0;transform:scale(.6) translateY(-8px)}
+.rise .card{transform:translateY(-58%) scale(1.06)}
+.btn{display:inline-block;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.2em;text-decoration:none;text-transform:uppercase;padding:1rem 1.9rem;border:1px solid var(--terra);background:var(--terra);color:#fff;cursor:pointer;transition:background .6s,color .6s;border-radius:2px}
+.btn:hover{background:transparent;color:var(--terra)}
+#openBtn{border-color:#f1e4c8;background:transparent;color:#f1e4c8}
+#openBtn:hover{background:#f1e4c8;color:var(--blue-d)}
+#intro.opening #openBtn{opacity:0;pointer-events:none;transition:opacity .5s}
+
+/* ---------- SITE ---------- */
+#site{opacity:0;transition:opacity 2s ease .2s}
+#site.show{opacity:1}
+section{padding:5.5rem 1.6rem;text-align:center;position:relative}
+.wrap{max-width:560px;margin:0 auto}
+.sub{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.24em;color:var(--terra);margin-bottom:1.1rem}
+h2{font-family:'Bodoni Moda',serif;font-weight:400;font-style:italic;font-size:clamp(1.9rem,8vw,2.7rem);line-height:1.2;color:var(--blue);margin-bottom:2rem}
+.rule{width:56px;height:1px;background:var(--terra);margin:0 auto 2rem}
+
+/* Accueil */
+#accueil{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;overflow:hidden;padding-top:4rem;padding-bottom:3rem}
+#accueil .bg{position:absolute;inset:0;background:url(images/photo-1.jpg) center 35%/cover;animation:slow 26s ease-out both}
+#accueil::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(10,22,70,.55),rgba(10,22,70,.35) 40%,rgba(10,22,70,.8))}
+#accueil>*:not(.bg){position:relative;z-index:2}
+@keyframes slow{from{transform:scale(1.12)}to{transform:scale(1)}}
+.welcome{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.3em;margin-bottom:1.4rem}
+.names{font-family:'Pinyon Script',cursive;font-weight:400;line-height:1;font-size:clamp(3.6rem,19vw,6rem);text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.names span{display:block}
+.names .amp{font-size:.55em;color:#f0c9b4;margin:.05em 0}
+.when{font-family:'Bodoni Moda',serif;font-size:1.15rem;margin:1.8rem 0 2rem;letter-spacing:.04em}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;width:min(100%,360px)}
+.count div{border:1px solid rgba(255,255,255,.45);padding:.8rem .2rem .6rem;backdrop-filter:blur(3px);background:rgba(18,38,116,.28)}
+.count b{display:block;font-family:'Bodoni Moda',serif;font-weight:400;font-size:1.7rem;line-height:1.1}
+.count small{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.14em}
+.scroll{position:absolute!important;bottom:1.2rem;left:50%;width:1px;height:42px;background:linear-gradient(#fff,transparent);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+/* Histoire */
+#histoire{background:var(--white)}
+#histoire p{margin-bottom:1.3rem}
+#histoire p:last-child{font-family:'Bodoni Moda',serif;font-style:italic;color:var(--terra-d);font-size:1.2rem;margin:2rem 0 0}
+
+/* Galerie */
+#galerie{background:var(--soft);padding-left:0;padding-right:0;overflow:hidden}
+#galerie h2,#galerie .sub{padding:0 1.6rem}
+.gal{display:flex;flex-direction:column;gap:2.4rem;padding:1rem 1.6rem 0}
+.ph{position:relative;overflow:hidden;width:82%;border-radius:2px;box-shadow:0 14px 30px -18px rgba(18,38,116,.55)}
+.ph:nth-child(odd){aspect-ratio:3/4}
+.ph:nth-child(even){aspect-ratio:4/5;margin-left:auto}
+.ph img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;object-position:center 30%;will-change:transform}
+
+/* Programme */
+.tl{position:relative;text-align:left;padding-left:1.8rem;margin-top:.5rem}
+.tl::before{content:"";position:absolute;left:5px;top:.6rem;bottom:.6rem;width:1px;background:var(--terra)}
+.ev{position:relative;padding-bottom:2.2rem}
+.ev::before{content:"";position:absolute;left:-1.8rem;top:.55rem;width:11px;height:11px;border-radius:50%;background:var(--white);border:2px solid var(--terra)}
+.ev time{font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--blue)}
+.ev h3{font-family:'Cinzel',serif;font-weight:400;font-size:.95rem;letter-spacing:.1em;margin-top:.1rem}
+.ev p{font-size:.95rem;opacity:.8}
+
+/* Lieu */
+#lieu{background:var(--soft)}
+.map{border:0;width:100%;height:280px;margin:.5rem 0 1.8rem;filter:saturate(.85)}
+#lieu address{font-style:normal;margin-bottom:1.6rem}
+#lieu .btn,.rsvp .btn{background:var(--blue);border-color:var(--blue)}
+#lieu .btn:hover,.rsvp .btn:hover{background:transparent;color:var(--blue)}
+
+/* Tenue */
+.dots{display:flex;justify-content:center;gap:1.6rem;margin-top:2rem}
+.dot{display:flex;flex-direction:column;align-items:center;gap:.6rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.14em}
+.dot i{width:58px;height:58px;border-radius:50%;box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
+
+/* RSVP */
+.rsvp{background:var(--soft)}
+.rsvp p{margin-bottom:1.8rem}
+.dead{margin:1.6rem 0 0!important;font-family:'Bodoni Moda',serif;font-style:italic;color:var(--terra-d)}
+
+/* Pied */
+footer{background:var(--blue-d);color:#fff;text-align:center;padding:4.5rem 1.6rem calc(3.5rem + env(safe-area-inset-bottom))}
+footer p{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.3rem;margin-bottom:1.4rem}
+.ini{font-family:'Pinyon Script',cursive;font-size:3.2rem;line-height:1;color:#f0c9b4}
+.tag{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.2em;margin-top:1.2rem;opacity:.85}
+
+/* Révélations */
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1.6s ease,transform 1.6s ease}
+.rv.in{opacity:1;transform:none}
+.w{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity 1.3s ease,transform 1.3s ease;transition-delay:calc(var(--i)*.14s)}
+.in .w,.w.in{opacity:1;transform:none}
+
+@media (min-width:760px){
+ section{padding:7rem 2rem}.wrap{max-width:620px}
+ .gal{max-width:760px;margin:0 auto;flex-direction:row;flex-wrap:wrap;justify-content:center}
+ .ph{width:46%}.ph:nth-child(even){margin-left:0;margin-top:3rem}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .rv,.w,#site{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body class="locked">
+
+<!-- OUVERTURE -->
+<div id="intro">
+  <div class="env" aria-hidden="true">
+    <div class="env-back"></div>
+    <div class="card"><small data-t="introKicker"></small><b data-t="introNames"></b></div>
+    <div class="env-front"></div>
+    <div class="flap"></div>
+    <div class="seal" data-t="initials"></div>
+  </div>
+  <button class="btn" id="openBtn" data-t="openLabel"></button>
+</div>
+
+<main id="site">
+  <section id="accueil">
+    <div class="bg" role="img" aria-label="Nicolas et Bérénice en tenue traditionnelle"></div>
+    <p class="welcome rv" data-t="welcome"></p>
+    <h1 class="names"><span data-split data-t="name1"></span><span class="amp rv">&amp;</span><span data-split data-t="name2"></span></h1>
+    <p class="when rv" data-t="dateLine"></p>
+    <div class="count rv" id="count" aria-live="off">
+      <div><b id="d">0</b><small>JOURS</small></div><div><b id="h">0</b><small>HEURES</small></div>
+      <div><b id="m">0</b><small>MIN</small></div><div><b id="s">0</b><small>SEC</small></div>
+    </div>
+    <span class="scroll" aria-hidden="true"></span>
+  </section>
+
+  <section id="histoire"><div class="wrap">
+    <p class="sub rv" data-t="storySub"></p>
+    <h2 data-split data-t="storyTitle"></h2>
+    <div class="rule rv"></div>
+    <div id="storyBody" class="rv"></div>
+  </div></section>
+
+  <section id="galerie">
+    <p class="sub rv" data-t="gallerySub"></p>
+    <h2 data-split data-t="galleryTitle"></h2>
+    <div class="gal" id="gal"></div>
+  </section>
+
+  <section id="programme"><div class="wrap">
+    <p class="sub rv" data-t="progSub"></p>
+    <h2 data-split data-t="progTitle"></h2>
+    <div class="tl" id="tl"></div>
+  </div></section>
+
+  <section id="lieu"><div class="wrap">
+    <p class="sub rv" data-t="placeSub"></p>
+    <h2 data-split data-t="placeTitle"></h2>
+    <iframe class="map rv" id="map" title="Carte du lieu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <address class="rv" id="addr"></address>
+    <a class="btn rv" id="route" target="_blank" rel="noopener" data-t="routeLabel"></a>
+  </div></section>
+
+  <section id="tenue"><div class="wrap">
+    <p class="sub rv" data-t="dressSub"></p>
+    <h2 data-split data-t="dressTitle"></h2>
+    <p class="rv" data-t="dressText"></p>
+    <div class="dots rv" id="dots"></div>
+  </div></section>
+
+  <section class="rsvp" id="rsvp"><div class="wrap">
+    <p class="sub rv" data-t="rsvpSub"></p>
+    <h2 data-split data-t="rsvpTitle"></h2>
+    <p class="rv" data-t="rsvpText"></p>
+    <a class="btn rv" id="rsvpBtn" target="_blank" rel="noopener" data-t="rsvpLabel"></a>
+    <p class="dead rv" data-t="rsvpDeadline"></p>
+  </div></section>
+
+  <footer>
+    <p class="rv" data-t="thanks"></p>
+    <div class="ini rv" data-t="footInitials"></div>
+    <div class="tag rv" data-t="hashtag"></div>
+  </footer>
+</main>
+
+<script>
+/* =====================================================
+   ✏️  TEXTES ET RÉGLAGES — modifiez uniquement ce bloc
+   ===================================================== */
+const CONFIG = {
+  // Date du jour J (heure d'Abidjan, GMT) : AAAA-MM-JJTHH:MM:SS
+  weddingDate: "2026-11-05T09:30:00Z",
+
+  t: {
+    introKicker: "INVITATION", introNames: "Nicolas & Bérénice",
+    initials: "N&B", openLabel: "Ouvrir notre invitation",
+
+    welcome: "ENSEMBLE AVEC LEURS FAMILLES",
+    name1: "Nicolas", name2: "Bérénice",
+    dateLine: "Jeudi 05 Novembre 2026 · Mairie du Plateau",
+
+    storySub: "NOTRE HISTOIRE", storyTitle: "Deux chemins, une destinée",
+    story: [
+      "Il existe, dit-on, autant d'histoires possibles entre deux êtres que de chemins qui se croisent. La nôtre a commencé simplement, sans bruit, avant de grandir jour après jour jusqu'à devenir évidente.",
+      "Nous avons appris à marcher côte à côte, à nous accorder sur le rythme de nos silences autant que sur celui de nos rires. Et sans que rien ne soit forcé, deux chemins se sont alignés pour n'en former qu'un seul.",
+      "Aujourd'hui, ce n'est plus une coïncidence. C'est une promesse."
+    ],
+
+    gallerySub: "GALERIE", galleryTitle: "Nos plus beaux moments",
+
+    progSub: "LE PROGRAMME", progTitle: "Le déroulé de la journée",
+    programme: [
+      { time: "09h30", title: "Petite Mairie du Plateau", text: "Passage devant l'officier d'état civil" },
+      { time: "11h00", title: "Bénédiction à l'Église MIERA", text: "À 100 m de l'Institut des Aveugles de Yopougon" },
+      { time: "12h30", title: "Réception", text: "Terrain de basket de GFCI, Yopougon" }
+    ],
+
+    placeSub: "LE LIEU", placeTitle: "Église MIERA",
+    placeAddress: "Église MIERA, à 100 m de l'Institut des Aveugles<br>Yopougon, Abidjan",
+    mapQuery: "Eglise MIERA Institut des Aveugles Yopougon Abidjan",
+    routeUrl: "https://yandex.go.link/discovery?action=card&oid=172827533578&adj_campaign=Share-from-the-app",
+    routeLabel: "Ouvrir l'itinéraire",
+
+    dressSub: "TENUE LIBRE", dressTitle: "Code vestimentaire",
+    dressText: "Venez comme vous êtes, dans la tenue qui vous ressemble. Si vous souhaitez vous accorder à notre journée, nos couleurs sont celles-ci :",
+    colors: [ { name: "BLEU ROI", hex: "#1b3a9c" }, { name: "TERRACOTTA", hex: "#b9532f" }, { name: "BLANC", hex: "#fdfbf7" } ],
+
+    rsvpSub: "RÉPONSE", rsvpTitle: "Confirmer ma présence",
+    rsvpText: "Votre présence est notre plus beau cadeau. Merci de nous répondre via le formulaire.",
+    rsvpLabel: "Confirmer ma présence",
+    rsvpUrl: "https://forms.gle/VOTRE-LIEN-ICI",   // ← collez ici le lien de votre formulaire
+    rsvpDeadline: "Réponse souhaitée avant le 29 octobre 2026",
+
+    thanks: "Merci de faire partie de notre histoire",
+    footInitials: "N & B", hashtag: "#NicolasEtBerenice2026"
+  },
+
+  // Photos (dossier images/). La première est la photo d'accueil.
+  heroPhoto: "images/photo-1.jpg",
+  gallery: ["images/photo-2.jpg","images/photo-3.jpg","images/photo-4.jpg","images/photo-5.jpg"]
+};
+/* ===================== FIN DES RÉGLAGES ===================== */
+
+const T = CONFIG.t, $ = s => document.querySelector(s);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Remplissage des textes
+document.querySelectorAll('[data-t]').forEach(el => { if (T[el.dataset.t] != null) el.textContent = T[el.dataset.t]; });
+$('#accueil .bg').style.backgroundImage = `url(${CONFIG.heroPhoto})`;
+$('#storyBody').innerHTML = T.story.map(p => `<p>${p}</p>`).join('');
+$('#gal').innerHTML = CONFIG.gallery.map((src, i) => `<figure class="ph rv"><img src="${src}" alt="Nicolas et Bérénice, photo ${i + 1}" loading="lazy" decoding="async"></figure>`).join('');
+$('#tl').innerHTML = T.programme.map(e => `<div class="ev rv"><time>${e.time}</time><h3>${e.title}</h3><p>${e.text}</p></div>`).join('');
+$('#addr').innerHTML = T.placeAddress;
+$('#map').src = `https://maps.google.com/maps?q=${encodeURIComponent(T.mapQuery)}&z=16&output=embed`;
+$('#route').href = T.routeUrl;
+$('#rsvpBtn').href = T.rsvpUrl;
+$('#dots').innerHTML = T.colors.map(c => `<div class="dot"><i style="background:${c.hex};${c.hex.toLowerCase() === '#fdfbf7' ? 'border:1px solid #c9ccd9' : ''}"></i>${c.name}</div>`).join('');
+
+// Titres mot par mot
+document.querySelectorAll('[data-split]').forEach(el => {
+  const words = el.textContent.trim().split(/\s+/);
+  el.innerHTML = words.map((w, i) => `<span class="w" style="--i:${i}">${w}</span>`).join(' ');
+  el.classList.add('rv');
+});
+
+// Révélations au défilement
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .18, rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// Compte à rebours
+const target = new Date(CONFIG.weddingDate).getTime();
+function tick() {
+  let diff = Math.max(0, target - Date.now());
+  const d = Math.floor(diff / 864e5), h = Math.floor(diff % 864e5 / 36e5), m = Math.floor(diff % 36e5 / 6e4), s = Math.floor(diff % 6e4 / 1e3);
+  $('#d').textContent = d; $('#h').textContent = String(h).padStart(2, '0');
+  $('#m').textContent = String(m).padStart(2, '0'); $('#s').textContent = String(s).padStart(2, '0');
+}
+tick(); setInterval(tick, 1000);
+
+// Effet de profondeur de la galerie
+if (!reduce) {
+  const figs = [...document.querySelectorAll('.ph')]; let ticking = false;
+  const update = () => {
+    const vh = innerHeight;
+    figs.forEach(f => {
+      const r = f.getBoundingClientRect(); if (r.bottom < -100 || r.top > vh + 100) return;
+      const p = (r.top + r.height / 2 - vh / 2) / vh;
+      f.firstElementChild.style.transform = `translateY(${Math.max(-1, Math.min(1, p)) * -f.offsetHeight * .08}px)`;
+    });
+    ticking = false;
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+}
+
+// Ouverture de l'enveloppe
+$('#openBtn').addEventListener('click', () => {
+  const intro = $('#intro'), k = reduce ? 0 : 1;
+  intro.classList.add('opening');
+  setTimeout(() => intro.classList.add('rise'), 1000 * k);
+  setTimeout(() => {
+    intro.classList.add('done');
+    document.body.classList.remove('locked');
+    scrollTo(0, 0);
+    $('#site').classList.add('show');
+    setTimeout(() => intro.remove(), 1600);
+  }, 2900 * k);
+});
+</script>
+</body>
+</html>
